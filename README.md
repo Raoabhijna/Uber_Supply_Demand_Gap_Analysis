@@ -1,46 +1,65 @@
 # Uber_Supply_Demand_Gap_Analysis
+This project aims to analyze Uber's demand-supply gap using both SQL and Excel tools. The analysis is based on data extracted and processed from Uber's demand dataset.
 
-## 📖 Project Summary
+**Project Overview**
 
-This project aims to analyze the Uber trip request data to identify the demand-supply gap. The objective is to understand the patterns and key metrics that cause trip cancellations, lack of available cars, and ultimately help Uber optimize its operations.
+This Jupyter Notebook contains the core data analysis scripts which:
 
-## 🎯 Problem Statement
+Load Uber demand and supply data
 
-The trip request data contains entries with empty `"Drop timestamp"` for two valid cases:
+Clean and preprocess the data
 
-* The trip was **cancelled**.
-* **No cars were available** to service the request.
+Perform gap analysis
 
-This behavior is expected and not considered as missing data. Similarly, the `"Driver id"` is null for failed trip requests, which is also expected.
+Visualize key metrics and trends
 
-## 📊 Analysis Steps
+**SQL Analysis**
 
-1. **Data Loading & Cleaning**
+We use SQL for querying the raw data to:
 
-   * Load the trip request data (`Uber Request Data.csv`).
-   * Handle nulls appropriately (for `"Drop timestamp"` and `"Driver id"`).
-2. **Exploratory Data Analysis (EDA)**
+Compute trip counts by time and location
 
-   * **Univariate Analysis** — Assess distributions of request statuses and pickup points.
-   * **Bivariate Analysis** — Explore relationships between time of day, request status, and other features.
-   * **Multivariate Analysis** — Investigate how multiple features jointly affect demand-supply gaps.
+Find peak demand hours
 
-## 🧠 Insights
+Identify areas with persistent demand-supply gaps
 
-Some key observations:
+To replicate the SQL part of this analysis:
 
-* Null drop timestamps are valid and represent failed trips.
-* Requests that failed often have missing driver information as no car was allocated.
+Import the dataset into a SQL database (e.g. MySQL, PostgreSQL).
 
-## 🛠️ Tools & Libraries
+Run the provided SQL scripts to extract insights.
 
-* `Python` 3.x
-* `Pandas` for data wrangling
-* `NumPy` for numerical computing
-* `Seaborn` and `Matplotlib` for data visualization
+**Excel Analysis**
 
-## 🏁 Next Steps
+We also provide guidance for analyzing the data using Excel:
 
-1. **Visualize demand-supply trends** — heatmaps for hourly and geographic patterns.
-2. **Identify peak-demand periods** where failed trips spike.
-3. **Optimize fleet deployment** — derive actionable recommendations to minimize supply-demand gaps.
+Import the cleaned data into Excel
+
+Use Pivot Tables to summarize demand and supply
+
+Create Pivot Charts to visualize trends
+
+Apply filters to drill down into specific areas and times
+
+**Getting Started**
+
+Clone this repository
+
+Run the Jupyter Notebook to reproduce the analysis
+
+Refer to scripts/sql_queries.sql for SQL queries
+
+Refer to the Excel instructions in docs/excel_analysis_guide.md
+
+**Dependencies**
+
+Python 3.x
+
+Pandas
+
+Matplotlib
+
+SQL database for SQL queries
+
+Microsoft Excel or compatible spreadsheet software
+
